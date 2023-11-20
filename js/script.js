@@ -28,6 +28,8 @@ function calcularSomatorio() {
 
     let resultado = somatorio(numero);
     alert(`O somatório é: ${resultado}`);
+    document.getElementById('Campo1').value= '';
+    document.getElementById('Campo1').focus();
 }
 
 /* 
@@ -43,4 +45,14 @@ function somatorio(numero) {
         }
     }
     return somatorio;
+}
+
+/* 
+*   Essa função é a responsável por permitir somente
+*   digitar 3 dígitos ("999")
+*/
+function limite_digitos(input, maxLength) {
+    if (input.value.length > maxLength) {
+        input.value = input.value.slice(0, maxLength);
+    }
 }
